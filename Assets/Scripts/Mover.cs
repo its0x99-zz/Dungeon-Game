@@ -17,7 +17,7 @@ public abstract class Mover : Fighter
         boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    protected virtual void UpdateMotor(Vector3 input)
+    protected virtual void UpdateMovement(Vector3 input)
     {
         // reset move delta
         moveDelta = new Vector3(input.x * xSpeed, input.y * ySpeed, 0);

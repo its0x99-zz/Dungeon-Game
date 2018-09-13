@@ -31,7 +31,7 @@ public class Enemy : Mover
 
     private void FixedUpdate()
     {
-        // is the player in range
+        // check if the player in range
         if (Vector3.Distance(playerTransform.position, startingPosition) < chaseLength)
         {
             if (Vector3.Distance(playerTransform.position, startingPosition) < triggerLength)
@@ -43,17 +43,17 @@ public class Enemy : Mover
             {
                 if (!collidingWithPlayer)
                 {
-                    UpdateMotor((playerTransform.position - transform.position).normalized);
+                    UpdateMovement((playerTransform.position - transform.position).normalized);
                 }
             }
             else
             {
-                UpdateMotor(startingPosition - transform.position);
+                UpdateMovement(startingPosition - transform.position);
             }
         }
         else
         {
-            UpdateMotor(startingPosition - transform.position);
+            UpdateMovement(startingPosition - transform.position);
             isChasing = false;
         }
 

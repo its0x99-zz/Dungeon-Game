@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
+
+        // Attach to events when the scene is loaded
         SceneManager.sceneLoaded += LoadState;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
