@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     public void OnHitPointChange()
     {
         float ratio = (float)player.hitPoint / (float)player.maxHitpoint;
-        hitPointBar.localScale = new Vector3(1, ratio, 1);
+        hitPointBar.localScale = new Vector3(ratio, 1, 1);
     }
 
     // Experience Logic
