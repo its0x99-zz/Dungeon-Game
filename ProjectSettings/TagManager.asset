@@ -51,6 +51,9 @@ TagManager:
   - name: Interactable
     uniqueID: 1798227715
     locked: 0
+  - name: Projectile
+    uniqueID: 3375693811
+    locked: 0
   - name: Actor
     uniqueID: 1820611183
     locked: 0
