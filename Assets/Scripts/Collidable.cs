@@ -16,7 +16,7 @@ public class Collidable : MonoBehaviour {
     
     protected virtual void Update()
     {
-        // collision work
+        // check for collisions each update
         boxCollider.OverlapCollider(filter, hits);
         for (int i = 0; i < hits.Length; i++)
         {
@@ -25,7 +25,7 @@ public class Collidable : MonoBehaviour {
 
             OnCollide(hits[i]);
 
-            hits[i] = null; // remove the hit from the array 
+            hits[i] = null; // remove the collision hit from the array 
             
         }
     }

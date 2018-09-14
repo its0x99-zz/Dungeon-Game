@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
-    private Transform lookAt;        // player object
+    private Transform lookAt;       // player object
     public float boundX = 0.15f;    // distance in X before camera is adjusted
     public float boundY = 0.05f;    // distance in Y before camera is adjusted
 
