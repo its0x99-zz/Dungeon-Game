@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,30 +40,16 @@ public class GameManager : MonoBehaviour
     public Animator deathMenuAnimator;
     public GameObject hud;
     public GameObject menu;
+    public Image ability;
 
     // Player State
     public int coins = 0;
     public int experience = 0;
-    public Weapon weapon;
+    public int selectedWeapon = 0;
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
-    }
-
-    // Try to upgrade the players weapon if they are not at max weapon level and they have the coins
-    public bool TryUpgradeWeapon()
-    {
-        if (weaponPrices.Count <= weapon.weaponLevel)
-            return false;
-
-        if (coins >= weaponPrices[weapon.weaponLevel])
-        {
-            coins -= weaponPrices[weapon.weaponLevel];
-            weapon.UpgradeWeapon();
-            return true;
-        }
-        return false;
     }
 
     // Hitpoint Bar
@@ -119,6 +106,16 @@ public class GameManager : MonoBehaviour
         OnHitPointChange();
     }
 
+    public void OnWeaponChange()
+    {
+        selectedWeapon++;
+        if (selectedWeapon > weaponSprites.Count - 1)
+        {
+            selectedWeapon = 0;
+        }
+        ability.sprite = weaponSprites[selectedWeapon];
+    }
+
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
     {
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
@@ -132,7 +129,6 @@ public class GameManager : MonoBehaviour
         s += "0" + "|";
         s += coins.ToString() + "|";
         s += experience.ToString() + "|";
-        s += weapon.weaponLevel.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
     }
@@ -140,11 +136,8 @@ public class GameManager : MonoBehaviour
     // Clears the players state for a new game
     public void Respawn()
     {
-        
-
         coins = 0;
         experience = 0;
-        weapon.weaponLevel = 0;
         
         SaveState();
         deathMenuAnimator.SetTrigger("Hide");
@@ -167,8 +160,6 @@ public class GameManager : MonoBehaviour
         experience = int.Parse(data[2]);
         if (GetCurrentLevel() != 1)
             player.SetLevel(GetCurrentLevel());
-
-        weapon.SetWeaponLevel(int.Parse(data[3]));
-        
+       
     }
 }

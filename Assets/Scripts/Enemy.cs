@@ -17,7 +17,7 @@ public class Enemy : Mover
     private Vector3 startingPosition;
 
     // Hitbox
-    private BoxCollider2D hitbox;
+    //private BoxCollider2D hitbox;
     public ContactFilter2D filter;
     private Collider2D[] hits = new Collider2D[10];
 
@@ -26,7 +26,7 @@ public class Enemy : Mover
         base.Start();
         playerTransform = GameManager.instance.player.transform;
         startingPosition = transform.position;
-        hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
+        //hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
 
     private void FixedUpdate()

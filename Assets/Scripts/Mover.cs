@@ -8,8 +8,11 @@ public abstract class Mover : Fighter
     protected BoxCollider2D boxCollider;
     protected Vector3 moveDelta;
     protected RaycastHit2D hit;
+
     public float ySpeed = 0.75f;
     public float xSpeed = 1.0f;
+
+    public bool isFacingRight = true;
 
     protected virtual void Start()
     {
@@ -26,10 +29,12 @@ public abstract class Mover : Fighter
         if (moveDelta.x > 0)
         {
             transform.localScale = originalSize;
+            isFacingRight = true;
         }
         else if (moveDelta.x < 0)
         {
             transform.localScale = new Vector3(originalSize.x * -1, originalSize.y, originalSize.z);
+            isFacingRight = false;
         }
 
         // add push vector if any
