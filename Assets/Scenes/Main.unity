@@ -1258,8 +1258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87735e91d38d03e4c8b86159574a7877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 10
-  maxHitpoint: 10
+  hitPoint: 15
+  maxHitpoint: 15
   pushRecoverySpeed: 0.2
   ySpeed: 0.75
   xSpeed: 1
@@ -13067,7 +13067,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: de2d3bab9a795214d865f6da5413de55, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

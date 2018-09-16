@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : Enemy
 {
 
+    // Fireball settings
     public float[] fireBallSpeed = { 2.5f, -2.5f };
     public float distance = 0.25f;
     public Transform[] fireBalls;
+
+    // References to other game objects
     public GameObject bossBarrier;
+    public Image healthBar;
 
     private void Update()
     {
@@ -18,12 +23,34 @@ public class Boss : Enemy
         }
     }
 
+    // Updates the boss health bar
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        base.ReceiveDamage(dmg);
+        healthBar.fillAmount = (float)hitPoint / (float)maxHitpoint;
+    }
+
+    // Killing the boss opens the barrier
     protected override void Death()
     {
         base.Death();
-
-        // open the boss barrier when he dies
         bossBarrier.SetActive(false);
+    }
+
+    protected override void UpdateMovement(Vector3 input)
+    {
+        base.UpdateMovement(input);
+
+        // prevent the healthbar from flipping when facing opposite direction
+        if (transform.localScale.x != originalSize.x)
+        {
+            healthBar.fillOrigin = (int)Image.OriginHorizontal.Left;
+        }
+        else
+        {
+            healthBar.fillOrigin = (int)Image.OriginHorizontal.Right;
+        }
+
     }
 
 }

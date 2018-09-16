@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
                 Vector3 bulletScreenPos = Camera.main.WorldToScreenPoint(goBullet.transform.position);
                 if (bulletScreenPos.y >= Screen.height || bulletScreenPos.y <= 0)
                 {
-                    DestroyObject(goBullet);
+                    Destroy(goBullet);
                     Projectiles.Remove(goBullet);
                 }
             }

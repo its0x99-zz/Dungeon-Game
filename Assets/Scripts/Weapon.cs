@@ -33,7 +33,7 @@ public class Weapon : Collidable
     protected override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
         {
             if (Time.time - lastSwing > coolDown)
             {
