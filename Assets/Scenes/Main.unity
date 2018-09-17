@@ -1214,7 +1214,6 @@ GameObject:
   - component: {fileID: 305881054}
   - component: {fileID: 305881053}
   - component: {fileID: 305881057}
-  - component: {fileID: 305881058}
   - component: {fileID: 305881059}
   m_Layer: 9
   m_Name: Player
@@ -1336,19 +1335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01767bf75b1888d4bad443e28652ff0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &305881058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 305881052}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd75d9e1eaa36a241bc895e60a569635, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1662091275334502, guid: 7755c030f7b63df43812c7595ff7d4a8,
-    type: 2}
 --- !u!114 &305881059
 MonoBehaviour:
   m_ObjectHideFlags: 0
