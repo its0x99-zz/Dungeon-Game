@@ -7,6 +7,7 @@ public class FireBall : MonoBehaviour
 
     public float speed = 20f;
     public Rigidbody2D rb;
+    public int weaponDamage = 1;
 
     // Use this for initialization
     void Start()
@@ -26,9 +27,16 @@ public class FireBall : MonoBehaviour
         Fighter enemy = hitInfo.GetComponent<Fighter>();
         if (enemy != null)
         {
+
+            weaponDamage = 1;
+            if (GameManager.instance.selectedWeapon == 1)
+            {
+                weaponDamage = 10;
+            }
+
             Damage dmg = new Damage
             {
-                damageAmount = 1,
+                damageAmount = weaponDamage,
                 origin = transform.position,
                 pushForce = 2.0f
             };
