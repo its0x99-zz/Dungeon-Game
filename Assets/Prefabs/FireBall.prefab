@@ -91,6 +91,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   rb: {fileID: 50338785905981656}
+  weaponDamage: 1
+  soundEffect: {fileID: 8300000, guid: 00fcc27c724560040a822f1fd91ecda6, type: 3}
+  hitSound: {fileID: 8300000, guid: b0620d0370a1f5e478289734796db117, type: 3}
 --- !u!212 &212150121035209956
 SpriteRenderer:
   m_ObjectHideFlags: 1

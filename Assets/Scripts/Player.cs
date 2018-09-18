@@ -7,11 +7,13 @@ public class Player : Mover
 {
     private SpriteRenderer spriteRenderer;
     private bool isAlive = true;
+    private AudioSource walkingSound;
 
     protected override void Start()
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        walkingSound = GetComponent<AudioSource>();
     }
 
     protected override void Death()
@@ -33,6 +35,17 @@ public class Player : Mover
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
+
+        if (x != 0 || y != 0)
+        {
+            if (!walkingSound.isPlaying)
+            {
+                walkingSound.Play();
+            }
+        } else
+        {
+            walkingSound.Stop();
+        }
 
         if (isAlive)
             UpdateMovement(new Vector3(x, y, 0));

@@ -29,7 +29,7 @@ public abstract class Mover : Fighter
         if (moveDelta.x > 0)
         {
             transform.localScale = originalSize;
-            isFacingRight = true;
+            isFacingRight = true;            
         }
         else if (moveDelta.x < 0)
         {
