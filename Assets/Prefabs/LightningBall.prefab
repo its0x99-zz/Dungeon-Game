@@ -94,6 +94,8 @@ MonoBehaviour:
   weaponDamage: 1
   soundEffect: {fileID: 8300000, guid: f431fdf0625b82843be0c57aff876e24, type: 3}
   hitSound: {fileID: 8300000, guid: b0620d0370a1f5e478289734796db117, type: 3}
+  coolDown: 1
+  coolDownTimer: 0
 --- !u!212 &212150121035209956
 SpriteRenderer:
   m_ObjectHideFlags: 1

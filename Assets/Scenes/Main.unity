@@ -1446,6 +1446,8 @@ MonoBehaviour:
   projectilePrefabs:
   - {fileID: 1065535684698286, guid: 4af295a83d7537a46912c30fa21029e1, type: 2}
   - {fileID: 1065535684698286, guid: 86461b2fb196a364c83482181bbec5d6, type: 2}
+  coolDown: 1
+  coolDownTimer: 0
 --- !u!1 &364773718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,6 +3858,21 @@ Prefab:
     - target: {fileID: 4946332644117946, guid: 278d3976b8a64f84e9784fe82d3af457, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61795004568591814, guid: 278d3976b8a64f84e9784fe82d3af457,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61795004568591814, guid: 278d3976b8a64f84e9784fe82d3af457,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61795004568591814, guid: 278d3976b8a64f84e9784fe82d3af457,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 278d3976b8a64f84e9784fe82d3af457, type: 2}
