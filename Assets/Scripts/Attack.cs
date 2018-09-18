@@ -8,12 +8,26 @@ public class Attack : MonoBehaviour {
 
     public Transform firePoint;
     public GameObject[] projectilePrefabs;
+	public float coolDown = 1;
+	public float coolDownTimer;
 
-	void Update () {
-		if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1"))
+	void Update () 
+		{
+		if (coolDownTimer > 0)
+		{
+			coolDownTimer -= Time.deltaTime;
+		}
+
+		if (coolDownTimer < 0)
+		{
+			coolDownTimer = 0;
+		}
+
+		if (Input.GetButtonDown("Jump") && coolDownTimer == 0)
         {
             Shoot();
-        }
+			coolDownTimer = coolDown;
+		}
 
         if (Input.GetKeyDown(KeyCode.Q))
         {

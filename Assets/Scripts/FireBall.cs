@@ -10,6 +10,8 @@ public class FireBall : MonoBehaviour
     public int weaponDamage = 1;
     public AudioClip soundEffect;
     public AudioClip hitSound;
+	public float coolDown = 1;
+	public float coolDownTimer;
 
     private AudioSource audioSource;
 
@@ -29,9 +31,9 @@ public class FireBall : MonoBehaviour
         audioSource = GameManager.instance.GetComponent<AudioSource>();
         audioSource.PlayOneShot(soundEffect);
     }
-    
-    // Check for collisions with objects
-    void OnTriggerEnter2D(Collider2D hitInfo)
+
+	// Check for collisions with objects
+	void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (hitInfo.name == "Player")
             return;
