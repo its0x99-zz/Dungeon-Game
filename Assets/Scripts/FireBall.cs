@@ -10,8 +10,6 @@ public class FireBall : MonoBehaviour
     public int weaponDamage = 1;
     public AudioClip soundEffect;
     public AudioClip hitSound;
-	public float coolDown = 1;
-	public float coolDownTimer;
 
     private AudioSource audioSource;
 

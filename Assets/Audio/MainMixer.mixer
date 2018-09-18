@@ -5,7 +5,7 @@ AudioMixerController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: NewAudioMixer
+  m_Name: MainMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -14,10 +14,12 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 3e3ca914de308cd459f0053ad96e71ec
+    name: volume
   m_AudioMixerGroupViews:
   - guids:
-    - 73068823a8f61fa40a264d84132e5a8a
+    - 4653225b16657c444ad1d949fbe99404
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -28,10 +30,10 @@ AudioMixerGroupController:
   m_PrefabInternal: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 73068823a8f61fa40a264d84132e5a8a
+  m_GroupID: 4653225b16657c444ad1d949fbe99404
   m_Children: []
-  m_Volume: e83c50d2b3e338d4aa03d5eecb4da356
-  m_Pitch: b7c9d85521a34124599ceae0a4cb77a6
+  m_Volume: 3e3ca914de308cd459f0053ad96e71ec
+  m_Pitch: 0381f6bad3efc534ea669a877386fc54
   m_Effects:
   - {fileID: 24400004}
   m_UserColorIndex: 0
@@ -44,9 +46,9 @@ AudioMixerEffectController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_EffectID: 1e0b5379531f4a64ba2b0aefa5b87f75
+  m_EffectID: 6d6283da9f624714299108af166a726b
   m_EffectName: Attenuation
-  m_MixLevel: cb206df19d5543144ad5c26fbf62906d
+  m_MixLevel: 678a11ae6837afc44bf39a09045371cb
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -58,6 +60,25 @@ AudioMixerSnapshotController:
   m_PrefabInternal: {fileID: 0}
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 8f8246e2a59c70241970aee4ec385e88
-  m_FloatValues: {}
+  m_SnapshotID: 38337db523e4c144faf647912d0737b0
+  m_FloatValues:
+    e76e630286120534a80838851b769c9f: 0.04171297
+    3e3ca914de308cd459f0053ad96e71ec: -0.43201196
   m_TransitionOverrides: {}
+--- !u!244 &244595819990466558
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: b2de3b651d5008b41933fd25eb86719a
+  m_EffectName: Lowpass
+  m_MixLevel: d70b834bf8246ec4fa231a0993718157
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: d6f6c00ddf6fadf45837201817582033
+  - m_ParameterName: Resonance
+    m_GUID: 7a0e85c0df41da840929475a8cf92329
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
