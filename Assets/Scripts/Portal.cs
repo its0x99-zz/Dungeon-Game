@@ -12,6 +12,12 @@ public class Portal : Collidable {
             // teleport the player to the new scene
             GameManager.instance.SaveState();
             string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
+            if (sceneName == "Menu")
+            {
+                GameManager.instance.player.hitPoint = GameManager.instance.player.maxHitpoint;
+                GameManager.instance.OnHitPointChange();
+
+            }
             SceneManager.LoadScene(sceneName);
         }
     }

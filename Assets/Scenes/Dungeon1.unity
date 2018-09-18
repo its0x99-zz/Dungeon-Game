@@ -204,7 +204,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   sceneNames:
-  - Main
+  - Menu
 --- !u!61 &102090091
 BoxCollider2D:
   m_ObjectHideFlags: 0
