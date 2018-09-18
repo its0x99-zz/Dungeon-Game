@@ -28,12 +28,18 @@ public abstract class Mover : Fighter
         // flip the sprite depending on players direction
         if (moveDelta.x > 0)
         {
-            transform.localScale = originalSize;
+            if (name != "Player") {
+                transform.localScale = originalSize;
+            }
+
             isFacingRight = true;            
         }
         else if (moveDelta.x < 0)
         {
-            transform.localScale = new Vector3(originalSize.x * -1, originalSize.y, originalSize.z);
+            if (name != "Player")
+            {
+                transform.localScale = new Vector3(originalSize.x * -1, originalSize.y, originalSize.z);
+            }
             isFacingRight = false;
         }
 

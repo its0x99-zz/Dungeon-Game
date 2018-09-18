@@ -8,12 +8,14 @@ public class Player : Mover
     private SpriteRenderer spriteRenderer;
     private bool isAlive = true;
     private AudioSource walkingSound;
+    private Animator animator;
 
     protected override void Start()
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
         walkingSound = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     protected override void Death()
@@ -35,6 +37,9 @@ public class Player : Mover
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
+
+        animator.SetFloat("x", x);
+        animator.SetFloat("y", y);
 
         if (x != 0 || y != 0)
         {
